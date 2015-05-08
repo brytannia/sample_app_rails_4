@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6e353700-096a-4e83-88cd-6939316a4038" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/models/micropost_spec.rb" afterPath="$PROJECT_DIR$/spec/models/micropost_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
     </list>
     <ignored path="sample_app_rails_4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/app/models/micropost.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.8035714" vertical-offset="0" max-vertical-offset="450">
-              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -44,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/spec/models/micropost_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="630">
-              <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+              <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -711,7 +710,7 @@
     <entry file="file://$PROJECT_DIR$/spec/models/micropost_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="630">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -719,7 +718,7 @@
     <entry file="file://$PROJECT_DIR$/app/models/micropost.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8035714" vertical-offset="0" max-vertical-offset="450">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="16" />
           <folding />
         </state>
       </provider>
