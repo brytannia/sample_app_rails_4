@@ -6,9 +6,9 @@ GIT
 
 GIT
   remote: git://github.com/willowapps/cornflower.git
-  revision: 179456ef2bedb09472c5326a733e9e655bd7463b
+  revision: 9869feb56580c4ecbcf5d3b6642d73a526b6f0d7
   specs:
-    cornflower (1.0.2)
+    cornflower (1.0.4)
 
 GEM
   remote: https://rubygems.org/

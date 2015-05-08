@@ -30,7 +30,7 @@ describe Micropost do
 
   describe ".useless_action" do
     subject { @micropost.useless_action 500 }
-    it { expect(subject).to eq 0 }
+    it { expect(subject).to be_true }
   end
 
 end
