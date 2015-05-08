@@ -27,4 +27,10 @@ describe Micropost do
     before { @micropost.content = "a" * 141 }
     it { should_not be_valid }
   end
+
+  describe ".useless_action" do
+    subject { @micropost.useless_action 500 }
+    it { expect(subject).to eq 0 }
+  end
+
 end

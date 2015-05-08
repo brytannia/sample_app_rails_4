@@ -1,3 +1,5 @@
+require 'cornflower/cornflower'
+
 class Micropost < ActiveRecord::Base
   belongs_to :user
   default_scope -> { order('created_at DESC') }
@@ -11,4 +13,10 @@ class Micropost < ActiveRecord::Base
     where("user_id IN (#{followed_user_ids}) OR user_id = :user_id",
           user_id: user.id)
   end
+
+  def useless_action q
+      o = Cornflower::Azure.new
+      o.useless_method q ? q : 0
+  end
+
 end
