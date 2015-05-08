@@ -7,7 +7,7 @@
 6. If you got some troubles with this task you are welcome to ask me questions.
 7. Deadline is 18th of May 
 
-Good lack!
+Good luck!
 
 # Usefull links
 Debug in RubyMine
