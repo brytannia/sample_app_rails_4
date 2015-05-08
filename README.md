@@ -5,6 +5,7 @@
 4. Also do not change .gitignore file. You have to commit you RubyMine files (in .idea folder) with other project files.
 5. Make a pull request when you finish this task.
 6. If you got some troubles with this task you are welcome to ask me questions.
+7. Deadline is 18th of May 
 
 Good lack!
 
