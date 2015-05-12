@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @usert = User.find(params[:id])
+    @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
   end
 
@@ -18,13 +18,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params=params.require(:usert).permit(:name, :email, :password,
+    user_params=params.require(:user).permit(:name, :email, :password,
                                          :password_confirmation)
     @user = User.new(user_params)
-    if @usert.save
-      sign_in @usert
+    if @user.save
+      sign_in @user
       flash[:success] = "Welcome to the Sample App!"
-      redirect_to @usert
+      redirect_to @user
     else
       render 'new'
     end
@@ -34,11 +34,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    user_params=params.require(:usert).permit(:name, :email, :password,
+    user_params=params.require(:user).permit(:name, :email, :password,
                                               :password_confirmation)
-    if @usert.update_attributes(user_params)
+    if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to @usert
+      redirect_to @user
     else
       render 'edit'
     end
@@ -52,15 +52,15 @@ class UsersController < ApplicationController
 
   def following
     @title = "Following"
-    @usert = User.find(params[:id])
-    @userts = @usert.followed_userts.paginate(page: params[:page])
+    @user = User.find(params[:id])
+    @users = @user.followed_users.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
     @title = "Followers"
-    @usert = User.find(params[:id])
-    @userts = @usert.followers.paginate(page: params[:page])
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
 
@@ -68,11 +68,11 @@ class UsersController < ApplicationController
     # Before filters
 
     def correct_user
-      @usert = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@usert)
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
     end
 
     def admin_user
-      redirect_to(root_url) unless current_usert.admin?
+      redirect_to(root_url) unless current_user.admin?
     end
   end
