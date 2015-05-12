@@ -16,7 +16,6 @@ class Micropost < ActiveRecord::Base
 
   def useless_action q
       o = Cornflower::Azure.new
-      o.b = 3000
       #do not change next line
       o.useless_method q
   end
