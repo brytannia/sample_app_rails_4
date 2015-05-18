@@ -3,13 +3,13 @@ class UsersController < ApplicationController
                 only: [:index, :edit, :update, :destroy, :following, :followers]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
+  before_action :get_user, only: [:show, :following, :followers, :destroy]
 
   def index
     @users = User.paginate(page: params[:page])
   end
 
   def show
-    @usert = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
   end
 
@@ -18,13 +18,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params=params.require(:usert).permit(:name, :email, :password,
-                                         :password_confirmation)
     @user = User.new(user_params)
-    if @usert.save
-      sign_in @usert
+    if @user.save
+      sign_in @user
       flash[:success] = "Welcome to the Sample App!"
-      redirect_to @usert
+      redirect_to @user
     else
       render 'new'
     end
@@ -34,45 +32,50 @@ class UsersController < ApplicationController
   end
 
   def update
-    user_params=params.require(:usert).permit(:name, :email, :password,
-                                              :password_confirmation)
-    if @usert.update_attributes(user_params)
+    if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to @usert
+      redirect_to @user
     else
       render 'edit'
     end
   end
 
+
   def destroy
-    User.find(params[:id]).destroy
+    @user.destroy
     flash[:success] = "User destroyed."
     redirect_to users_url
   end
 
   def following
     @title = "Following"
-    @usert = User.find(params[:id])
-    @userts = @usert.followed_userts.paginate(page: params[:page])
+    @users = @user.followed_users.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
     @title = "Followers"
-    @usert = User.find(params[:id])
-    @userts = @usert.followers.paginate(page: params[:page])
+    @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
 
+
   private
-    # Before filters
+  # Before filters
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def get_user
+      @user = User.find(params[:id])
+    end
 
     def correct_user
-      @usert = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@usert)
+      get_user
+      redirect_to(root_url) unless current_user?(@user)
     end
 
     def admin_user
-      redirect_to(root_url) unless current_usert.admin?
+      redirect_to(root_url) unless current_user.admin?
     end
   end
